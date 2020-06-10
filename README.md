@@ -1,5 +1,7 @@
-# [dsame](https://dsame.xoynq.com)
-**dsame** is a program to decode [EAS](http://en.wikipedia.org/wiki/Emergency_Alert_System)/[SAME](http://en.wikipedia.org/wiki/Specific_Area_Message_Encoding) (Emergency Alert System/Specific Area Message Encoding) alert messages. These messages are primarily used by the National Weather Service for weather-related warnings. **dsame** will decode a demodulated message, filter by SAME ([US](http://www.nws.noaa.gov/nwr/coverage/county_coverage.html)/[CA](http://www.ec.gc.ca/meteo-weather/default.asp?lang=En&n=E5A4F19C-1)) and/or event code, provide readable text, or run an external program.
+# same-to-aprs
+**same-to-aprs** is a program to decode [EAS](http://en.wikipedia.org/wiki/Emergency_Alert_System)/[SAME](http://en.wikipedia.org/wiki/Specific_Area_Message_Encoding) (Emergency Alert System/Specific Area Message Encoding) alert messages and then re-encode them into [APRS](https://en.wikipedia.org/wiki/Automatic_Packet_Reporting_System) packets.
+
+This project is based on the **dsame** code.
 
 **DO NOT RELY ON THIS PROGRAM WHEN LOSS, DAMAGE, INJURY OR DEATH MAY OCCUR!**
 
@@ -11,19 +13,15 @@
 
 ### Installation
 
-For Microsoft Windows, **dsame** is distributed as a self-extracting installer, and downloads for 64-bit and 32-bit systems are available. Run the installer to install the program and optionally multimon-ng and/or rtl_fm.
-
-For Linux and similar systems, **dsame** is available as a compressed (tar.gz or zip) archive which contains the program source. The source repository can also be cloned using `git`. Extract and run `dsame.py` using the python interpreter.
-
-Check [here](https://github.com/cuppa-joe/dsame/releases/latest) to download the latest release.
+For Linux and similar systems, **dsame** is available as a compressed (tar.gz) archive which contains the program source. The source repository can also be cloned using `git`. Extract and run `same-to-aprs.py` using the python interpreter.
 
 ### Command Line Options
 
 ```
-usage: dsame [-h] [--msg MSG] [--same [SAME [SAME ...]]]
-             [--event [EVENT [EVENT ...]]] [--lang LANG]
-             [--loglevel {10,20,30,40,50}] [--text] [--no-text] [--version]
-             [--call CALL] [--command COMMAND] [--source SOURCE]
+usage: same-to-aprs [-h] [--msg MSG] [--same [SAME [SAME ...]]]
+                    [--event [EVENT [EVENT ...]]] [--lang LANG]
+                    [--loglevel {10,20,30,40,50}] [--text] [--no-text] [--version]
+                    [--call CALL] [--command COMMAND] [--source SOURCE]
 ```
 #### Options
 
@@ -40,7 +38,7 @@ Option            | Description                                                 
 
 ### Usage
 
-**dsame** can decode EAS messages from the command line, directly from the output of an external command, or by capturing the ouput of a shell script/batch file or external program. Use `msg` for command line decoding. The `source` command is used to capture and decode the output of a script or program. Without one of these options, standard input is used. Press `CTRL-C` to exit the program.
+**same-to-aprs** can decode EAS messages from the command line, directly from the output of an external command, or by capturing the ouput of a shell script/batch file or external program. Use `msg` for command line decoding. The `source` command is used to capture and decode the output of a script or program. Without one of these options, standard input is used. Press `CTRL-C` to exit the program.
 
 #### Source Scripts
 
